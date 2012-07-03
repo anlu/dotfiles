@@ -1,0 +1,4 @@
+StrictHostKeyChecking no
+ControlPath ~/.ssh/%r@%h:%p
+HashKnownHosts no
+User live

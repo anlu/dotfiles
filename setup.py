@@ -31,9 +31,11 @@ for f in os.listdir('.'):
         else:
             print e
 
-vim_swap = '../.vim_swap'
-if os.path.exists(vim_swap):
-    print "No need to create", vim_swap
-else:
-    os.mkdir(vim_swap, 0700)
-    print "Created \033[32;1m" + vim_swap + "\033[0m"
+for path in ['../.vim_swap', '../.ssh']:
+    if os.path.exists(path):
+        print "No need to create", path
+    else:
+        os.mkdir(path, 0700)
+        print "Created \033[32;1m" + path + "\033[0m"
+
+os.symlink('dotfiles/ssh/config', '../.ssh/config')

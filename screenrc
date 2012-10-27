@@ -1,5 +1,6 @@
 attrcolor b ".I"
 termcapinfo * 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 hardstatus off
+escape ^Ss
 
 defscrollback 5000

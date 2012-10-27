@@ -33,3 +33,5 @@
     editor = vim
     pager = less -i
     excludesfile = /home/anlu/.gitignore
+[push]
+	default = upstream

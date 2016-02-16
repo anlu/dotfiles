@@ -10,8 +10,8 @@ __git_files () {
 }
 
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=5000
+HISTSIZE=5000
+SAVEHIST=25000
 
 setopt no_beep
 setopt extendedglob
@@ -65,18 +65,11 @@ alias ls='ls --color=auto -hv'
 alias ll='ls -l'
 alias l.='ls -Ad .*'
 alias la='ls -A'
-alias grep='grep --color -nTs'
+alias grep='grep --color -nTIs'
 alias df='df -hx tmpfs'
 alias du='du --max-depth=1'
 alias sr='screen -d -r'
-alias tmux='tmux -2'
 alias ack='ack-grep'
-alias gil='git log --graph --abbrev-commit --stat -C --decorate --patience --date=local'
-alias gib='git branch -a'
-alias gis='git status'
-alias gid='git diff -C --patience --date=local'
-alias giw='git show -C --patience --date=local'
-alias gic='git checkout'
 alias tree='tree -AvL 10'
 alias vil='vi *(.om[1])'
 alias sudovim='sudo vim -N -u /home/anlu/.vimrc'
@@ -88,12 +81,20 @@ function cl() {
 	fi
 }
 
-export GOROOT=$HOME/go
-
-PATH=$PATH:$HOME/go/bin:/sbin:/usr/sbin
-if [ -d $HOME/bin ]; then
-	PATH=$HOME/bin:$PATH
-fi
+alias gil='git log --graph --abbrev-commit --stat -C --decorate --patience --date=local'
+alias gib='git branch -a'
+alias gis='git status'
+alias gid='git diff -C --patience --date=local'
+alias giw='git show -C --patience --date=local'
+alias gic='git checkout'
+gcb () {
+    match=`git rev-parse --abbrev-ref --branches="*$1*"`
+    case `wc -w <<< "$match" | tr -d ' '` in
+        ("0") echo "error: '$1' did not match any branch." 2>&1 ;;
+        ("1") git checkout $match ;;
+        (*) echo "error: '$1' is ambigious among:\n$match" 2>&1 ;;
+    esac
+}
 
 stty stop undef
 
@@ -116,8 +117,4 @@ else
     start_agent
 fi
 
-VIRTUAL_ENV="/home/anlu/env"
-PATH=$VIRTUAL_ENV/bin:$PATH
 if [ -d $HOME/bin ]; then PATH=$HOME/bin:$PATH fi
-
-export PYTHONSTARTUP=~/.pystart.py

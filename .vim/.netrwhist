@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/anlu/analytics/backend/checklists'
+let g:netrw_dirhist_2='/scratch/munin-2.0.25/master/lib/Munin/Master'
+let g:netrw_dirhist_3='/home/anlu/analytics/backend'
+let g:netrw_dirhist_4='/home/anlu/analytics/backend/engage'
+let g:netrw_dirhist_5='/home/anlu/analytics/backend/deploy_logs'
+let g:netrw_dirhist_6='/home/anlu/analytics/backend'

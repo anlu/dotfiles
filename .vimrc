@@ -48,9 +48,7 @@ nnoremap ` '
 
 map j gj
 map k gk
-map <c-t> :tabnew 
-map <c-n> gt
-map <c-p> gT
+map <c-t> :tabnew
 
 " Intuitive backspacing in insert mode
 set backspace=indent,eol,start
@@ -69,8 +67,27 @@ autocmd BufWinLeave * call clearmatches()
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
-" less syntax highligting
+" syntax highligting
 au BufNewFile,BufRead *.less set filetype=less
 
-" Gundo
-nnoremap <F5> :GundoToggle<CR>
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_go_checkers = ['govet']
+
+" Make ctrlp open files in a new tab always
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }
+
+let g:go_fmt_autosave = 1
+let g:go_fmt_command = 'goimports'
+
+" Pathogen
+execute pathogen#infect()

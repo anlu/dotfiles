@@ -75,8 +75,10 @@ au BufNewFile,BufRead *.less set filetype=less
 " syntastic
 let g:syntastic_python_checkers=['pyflakes']
 
-" html indent two
+" indent two
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd FileType css setlocal shiftwidth=2 tabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
 " Pathogen
 execute pathogen#infect()

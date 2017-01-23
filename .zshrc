@@ -98,23 +98,4 @@ gcb () {
 
 stty stop undef
 
-SSH_ENV="$HOME/.ssh/environment"
-function start_agent {
-    ssh-agent > "$SSH_ENV"
-    chmod 600 "$SSH_ENV"
-    . "$SSH_ENV" > /dev/null
-    ssh-add
-}
-if [ -f "$SSH_ENV" ]; then
-    . "$SSH_ENV" > /dev/null
-fi
-if [ -n "$SSH_AGENT_PID" ]; then
-    ps ${SSH_AGENT_PID} > /dev/null
-    if [ $? -ne 0 ]; then
-        start_agent
-    fi
-else
-    start_agent
-fi
-
 if [ -d $HOME/bin ]; then PATH=$HOME/bin:$PATH fi

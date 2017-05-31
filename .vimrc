@@ -51,6 +51,7 @@ map k gk
 map <c-t> :tabnew
 map <c-n> gt
 map <c-p> gT
+nmap \ :set invnumber<CR>
 
 " Intuitive backspacing in insert mode
 set backspace=indent,eol,start

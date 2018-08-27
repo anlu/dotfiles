@@ -59,9 +59,6 @@ export EDITOR=vim
 export MANPAGER="/bin/sh -c \"col -bx | vim -c 'set ft=man' -\""
 export GREP_COLORS='ms=01;36:mc=01;31:sl=:cx=:fn=35:ln=33:bn=33:se=01;34'
 
-eval `dircolors ~/.solarized-dircolors-dark`
-
-alias ls='ls --color=auto -hv'
 alias ll='ls -l'
 alias l.='ls -Ad .*'
 alias la='ls -A'

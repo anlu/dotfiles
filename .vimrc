@@ -1,9 +1,9 @@
 set t_Co=256
 set bg=dark
-colorscheme solarized
 
 filetype indent plugin on
 syntax on
+colorscheme dracula
 
 set number
 set showmatch

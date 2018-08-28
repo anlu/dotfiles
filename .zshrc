@@ -29,8 +29,9 @@ zle -N edit-command-line
 bindkey -e
 bindkey '^[[3~' delete-char
 bindkey '\C-v' edit-command-line
-bindkey '^[[1;5C' forward-word
-bindkey '^[[1;5D' backward-word
+bindkey '^b' backward-word
+bindkey '^f' forward-word
+
 local WORDCHARS=${WORDCHARS//\//}
 
 autoload colors

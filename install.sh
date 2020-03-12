@@ -11,3 +11,7 @@ brew install neovim
 # Install fzf
 cd ~
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
+
+# git init
+git config --global user.email "anlu@mixpanel.com"
+git config --global user.name "anlu"

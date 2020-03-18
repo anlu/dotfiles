@@ -14,29 +14,26 @@ SAVEHIST=25000
 
 setopt no_beep
 setopt extendedglob
-#setopt print_exit_value
 setopt prompt_subst
 setopt complete_in_word
 setopt no_auto_menu
-setopt no_always_last_prompt
 setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt extended_history
-setopt promptsubst
 
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -e
-bindkey '^[[3~' delete-char
 bindkey '\C-v' edit-command-line
 bindkey '^b' backward-word
 bindkey '^f' forward-word
 
+# Make it so forward/backward-word also stops on '/' characters
 local WORDCHARS=${WORDCHARS//\//}
 
 autoload colors
 colors
-PROMPT="%{%B%F{green}%}%n%{%B%F{blue}%}@%{%B%F{cyan}%}%m%{%B%F{green}%} %{%b%F{yellow}%}%~%{%B%F{green}%} \$ "
+export PS1="%{%B%F{green}%}%n%{%B%F{blue}%}@%{%B%F{cyan}%}%m%{%B%F{green}%} %{%b%F{yellow}%}%~%{%B%F{green}%} \$ "
 
 # exit status
 RPROMPT="%(?..%{$fg_bold[red]%}%? %{$reset_color%})"
@@ -59,17 +56,13 @@ export EDITOR=vim
 export MANPAGER="/bin/sh -c \"col -bx | vim -c 'set ft=man' -\""
 export GREP_COLORS='ms=01;36:mc=01;31:sl=:cx=:fn=35:ln=33:bn=33:se=01;34'
 
-alias ls='ls -G'
+alias ls='ls --color'
 alias ll='ls -l'
 alias l.='ls -Ad .*'
 alias la='ls -A'
-alias grep='grep --color -nTIs'
 alias df='df -hx tmpfs'
 alias du='du --max-depth=1'
 alias sr='screen -d -r'
-alias ack='ack-grep'
-alias tree='tree -AvL 10'
-alias vil='vi *(.om[1])'
 alias sudovim='sudo vim -N -u /home/anlu/.vimrc'
 function cl() {
 	if [ $# = 0 ]; then
@@ -97,3 +90,5 @@ gcb () {
 stty stop undef
 
 if [ -d $HOME/bin ]; then PATH=$HOME/bin:$PATH fi
+
+alias sr='screen -r'

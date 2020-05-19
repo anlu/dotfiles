@@ -5,6 +5,9 @@ echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >> /home/anlu2/.zpro
 
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
+# Neovim
+brew install neovim
+
 # Install fzf
 cd ~
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install

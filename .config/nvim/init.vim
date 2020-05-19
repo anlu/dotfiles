@@ -1,9 +1,4 @@
-set t_Co=256
-set bg=dark
-
 filetype indent plugin on
-syntax on
-colorscheme dracula
 
 set number
 set showmatch
@@ -73,13 +68,11 @@ autocmd GUIEnter * set visualbell t_vb=
 " less syntax highligting
 au BufNewFile,BufRead *.less set filetype=less
 
-" syntastic
-let g:syntastic_python_checkers=['pyflakes']
-
 " indent two
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType typescript setlocal shiftwidth=2 tabstop=2
 
 " Do not yank to default register when pasting over text
 " http://stackoverflow.com/questions/290465/vim-how-to-paste-over-without-overwriting-register/4446608#4446608
@@ -103,5 +96,13 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("t")': ['<cr>'],
     \ }
 
-" Pathogen
-execute pathogen#infect()
+" vim-plug
+call plug#begin('~/.config/nvim/plugged')
+
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
+Plug 'tpope/vim-surround'
+
+call plug#end()
+
+colorscheme dracula

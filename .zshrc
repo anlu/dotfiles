@@ -63,7 +63,8 @@ alias la='ls -A'
 alias df='df -hx tmpfs'
 alias du='du --max-depth=1'
 alias sr='screen -d -r'
-alias sudovim='sudo vim -N -u /home/anlu/.vimrc'
+alias vim='nvim'
+alias sudovim='sudo nvim -N -u /home/anlu/.vimrc'
 function cl() {
 	if [ $# = 0 ]; then
 		cd && ls

@@ -56,7 +56,6 @@ export EDITOR=vim
 export MANPAGER="/bin/sh -c \"col -bx | vim -c 'set ft=man' -\""
 export GREP_COLORS='ms=01;36:mc=01;31:sl=:cx=:fn=35:ln=33:bn=33:se=01;34'
 
-alias ls='ls --color'
 alias ll='ls -l'
 alias l.='ls -Ad .*'
 alias la='ls -A'
@@ -93,39 +92,5 @@ stty stop undef
 if [ -d $HOME/bin ]; then PATH=$HOME/bin:$PATH fi
 
 alias sr='screen -r'
-
-# Mixpanel stuffs
-source $HOME/.gcpdevbox
-source $HOME/analytics/.shellenv
-
-alias k='kubectl'
-
-export NODE_OPTIONS=--max_old_space_size=4096
-
-alias kint1="kubectl --context=gke_mixpanel-dev-1_us-central1-b_arb-integration";
-alias kint2="kubectl --context=gke_mixpanel-dev-1_us-central1-c_arb-integration";
-alias kdev="kubectl --context=gke_mixpanel-dev-1_us-central1-b_dev-cluster";
-alias kci1="kubectl --context=gke_mixpanel-tools_us-central1-a_ci-arb-integration-1";
-alias kci2="kubectl --context=gke_mixpanel-tools_us-central1-b_ci-arb-integration-1";
-alias kprod-zk="kubectl --context=gke_mixpanel-prod-1_us-central1-b_kube-prod-zk";
-alias kprod1="kubectl --context=gke_mixpanel-prod-1_us-central1-b_kube-prod-1";
-alias kprod2="kubectl --context=gke_mixpanel-prod-1_us-central1-c_kube-prod-2";
-alias kapi1="kubectl --context=gke_mixpanel-prod-1_us-east1-b_kube-prod-api-1";
-alias kapi2="kubectl --context=gke_mixpanel-prod-1_us-west1-a_kube-prod-api-2";
-alias kapi3="kubectl --context=gke_mixpanel-prod-1_europe-west1-d_kube-prod-api-3";
-alias kapi4="kubectl --context=gke_mixpanel-prod-1_asia-southeast1-a_kube-prod-api-4";
-alias kstaging1="kubectl --context=gke_mixpanel-dev-1_us-central1-c_staging-1";
-alias kstaging2="kubectl --context=gke_mixpanel-dev-1_us-central1-a_staging-2";
-alias ktools="kubectl --context=gke_mixpanel-tools_us-central1-b_tools-cluster";
-alias ksecurity="kubectl --context=gke_mixpanel-security_us-central1-f_kube-security-1";
-alias keuapi1="kubectl --context=gke_mixpanel-prod-eu_europe-west4-a_kube-prod-eu-api-1";
-alias keuapi2="kubectl --context=gke_mixpanel-prod-eu_europe-west4-b_kube-prod-eu-api-2";
-alias keu1="kubectl --context=gke_mixpanel-prod-eu_europe-west4-a_kube-prod-eu-1";
-alias keu2="kubectl --context=gke_mixpanel-prod-eu_europe-west4-b_kube-prod-eu-2";
-alias keuzk="kubectl --context=gke_mixpanel-prod-eu_europe-west4-a_kube-prod-eu-zk";
-
-alias geu="gcloud --project=mixpanel-prod-eu"
-
-cd ~/analytics
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

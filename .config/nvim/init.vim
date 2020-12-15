@@ -68,7 +68,11 @@ autocmd GUIEnter * set visualbell t_vb=
 " less syntax highligting
 au BufNewFile,BufRead *.less set filetype=less
 
+" set filetypes as typescriptreact
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
+
 " indent two
+autocmd FileType typescriptreact setlocal shiftwidth=2 tabstop=2
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
@@ -102,6 +106,8 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 Plug 'tpope/vim-surround'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 call plug#end()
 

@@ -23,3 +23,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 mv .hammerspoon ~
 mv .zshrc ~
 mv .config ~
+
+# Enable Hammerspoon access under Accessibility in System Prefs
+# Install Ubuntu Mono font: https://fonts.google.com/specimen/Ubuntu+Mono
+# In nvim, run :PlugInstall

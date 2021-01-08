@@ -1,3 +1,6 @@
+set -eux
+set -o pipefail
+
 # Install homebrew / linuxbrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 

@@ -20,7 +20,7 @@ brew install neovim
 cd ~
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 
-mv .hammerspoon ~
+mv .hammerspoon/init.lua ~/.hammerspoon/
 mv .zshrc ~
 mv .config ~
 

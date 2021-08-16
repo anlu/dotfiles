@@ -4,12 +4,8 @@ set -o pipefail
 # Install homebrew / linuxbrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >> /home/anlu2/.zprofile
-
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-
 brew install zsh
-brew cask install kitty
+brew install --cask kitty
 
 sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
 

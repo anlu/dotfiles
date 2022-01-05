@@ -20,6 +20,8 @@ mv .hammerspoon/init.lua ~/.hammerspoon/
 mv .zshrc ~
 mv .config ~
 
+defaults write -g ApplePressAndHoldEnabled -bool false
+
 # Enable Hammerspoon access under Accessibility in System Prefs
 # Install Ubuntu Mono font: https://fonts.google.com/specimen/Ubuntu+Mono
 # In nvim, run :PlugInstall
